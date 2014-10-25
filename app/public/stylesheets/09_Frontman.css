@@ -1,0 +1,103 @@
+/*========ZERO USER AGENT STYLESHEET===========*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+/*========START OF Frontman STYLESHEET=========*/
+img{max-width: 100%;}
+body a{color:rgb(0,0,0);text-decoration: none;}
+body p{line-height: 1em;}
+hr{
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(110,88,20,0.1);
+  border-bottom: 1px solid rgba(110,88,20,0.3);
+  margin: 0em 0em 0em 0em;
+}
+body{
+  background-color: rgb(255,191,0);
+  font-family: 'Roboto', sans-serif;
+}
+header{
+  background-color: rgb(255,255,255);
+}
+header nav ul li{
+  display: inline-block;
+  height: 2em;
+  width: 33%;
+}
+header nav ul li i.fa{
+  color: rgb(192,145,0);
+  margin: 0% 0% 0% 4%;
+}
+header nav ul li img{
+  display: inline-block;
+  height: 126%;
+  margin: 0% 0% 0% 43%;
+}
+header nav ul li a{
+  vertical-align: top;
+  color: rgb(255,255,255);
+  border-radius: 5px;
+  background-color: rgb(194,145,0);
+  padding:0.5em 2em 0.5em 2em;
+  margin: 0% 0% 0% 68%;
+  font-size: 100%;
+}
+main {
+  background-image: url('../images/DINOBACKGROUND.png');
+  background-repeat: repeat-x;
+  padding:2em;
+  width:100%;
+}
+main section {
+  vertical-align: top;
+  display: inline-block;
+}
+main section.peep{
+  width: 53.99%;
+  margin:auto;
+}
+main section.peep-aside,  main section.peep-profile{
+  width: 19.99%;
+}
+main section artical {
+  width: 98%;
+  margin: auto;
+  display: block;
+  background-color: rgb(255,255,255);
+  border-radius: 5px;
+}
+main section artical p{
+  padding: 9%;
+}
+main section.peep-profile artical span{
+  background: rgb(110,88,20);
+  width:100%;
+  height: 5em;
+  display: block;
+  border-radius: 5px 5px 0px 0px;
+}
+main section artical form{
+  padding: 4% 0% 5% 4%;
+  background: rgba(255,191,0,0.5);
+}
+main section artical form input[type=text]{
+  width: 89%;
+  padding: 0.5em;
+}
+main section artical blockquote{
+  padding:1em;
+}
+main section artical aside{
+  width:100%;
+  font-size: 75%;
+  margin: 1% 0% 2% 60%;
+  display:block;
+}
+main section.peep-aside artical div{
+  width :100%;
+  background-color: rgba(255,191,0,0.5);
+  padding: 0% 0% 0% 0%;
+}
+main section.peep-aside artical div p{
+  font-size: 80%;
+  line-height: 18px;
+}
