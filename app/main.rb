@@ -35,7 +35,12 @@ end
 
 get '/api/chitter' do
   @peeps = Peep.all(:order => [:created_at.desc])
-  @peeps_feed = @peeps.to_json
+  @peeps_feed = @peeps.to_json(
+    :relationships => {
+      :user => {:exclude => [:password_digest,:email]},
+      :poop => {:only => [:poop]}
+    }
+  )
   erb :json
 end
 
