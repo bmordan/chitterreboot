@@ -5,41 +5,39 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link href='/stylesheets/09_Frontman.css' rel='stylesheet' type='text/css'>
-  <script src="/js/jquery-2.1.1.min.js"></script> 
+  <script src="/js/jquery-2.1.1.min.js"></script>
+  <script src="/js/handlebars-v2.0.0.js"></script> 
 </head>
 
 <body>
+
   <header>
     <nav>
       <ul>
         <li><i class="fa fa-home fa-3x"></i></li>
         <li><img src="/images/DINO.svg"></li>
-        <li><a href="#">Peep</a></li>
+        <li><a href="#" class="peep-button">Peep</a></li>
       </ul>
     </nav>
   </header>
-  <main>
 
-    <section class="peep-profile"> 
-      <artical>
-        <span></span>
-        <p>Profile in here</p>
-        <hr>
-        <form>
-          <input type="text" name="peep" placeholder="compose a new peep">
-        </form>
-      </artical>
-    </section>
+  <section class="preauth">
+    <artical>
+      <form>
+        <h1>Sign in to Chitter</h1>
+        <input type="text" name="handle">
+        <input type="password" name="password">
+        <a href="#" class="peep-button">Sign in</a>
+      </form>
+      <div>
+        <p>New to Chitter? <a href="#">Sign up here >></a></p>
+      </div>
+    </artical>
+  </section>
 
-    <section class="peep">
-      <artical>
-        <blockquote>"some amazing peep in 144 charactures. come check out the bliss
-        </blockquote>
-        <aside>tweeted by user | 13 March 2014 13:23pm</aside>
-        <hr />
-      </artical>
-    </section>
-
+  <main class="auth">
+    <section class="peep-profile"></section>
+    <section class="peep"></section>
     <section class="peep-aside">
       <artical>
         <p>Replys in here</p>
@@ -47,7 +45,48 @@
         <div><p>Join the conversation and poop a peep. Our peeps are 144 charactures. Better than Twitter.</p></div>
       </artical>
     </section>
-
   </main>
+
+
+
+
+
+
+
+  <template class="peeps">
+      <artical>
+        <blockquote>{{peep}}</blockquote>
+        <aside>{{user.name}} | {{created_at}}</aside>
+        <hr />
+      </artical>
+  </template>
+
+  <template class="profile">
+    <artical>
+      <span></span>
+      <h1>{{name}}</h1>
+      <ul>
+        <li>
+          <ul>
+            <li>HANDLE</li>
+            <li>@{{handle}}</li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>PEEPS</li>
+            <li>{{totalPeeps}}</li>
+          </ul>
+        </li>
+      </ul>
+      <hr>
+      <form>
+        <input type="text" name="peep" placeholder="compose a new peep">
+      </form>
+    </artical>
+  </template>
+
+  <script src="../js/09_Frontman.js"></script>
+
 </body>
 </html>

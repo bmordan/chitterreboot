@@ -15,6 +15,7 @@ body{
   background-color: rgb(255,191,0);
   font-family: 'Roboto', sans-serif;
 }
+/*========HEADER===========*/
 header{
   background-color: rgb(255,255,255);
 }
@@ -29,18 +30,62 @@ header nav ul li i.fa{
 }
 header nav ul li img{
   display: inline-block;
-  height: 126%;
-  margin: 0% 0% 0% 43%;
+  height: 80%;
+  margin: 0% 0% 0% 40%;
 }
-header nav ul li a{
-  vertical-align: top;
+.peep-button{
   color: rgb(255,255,255);
   border-radius: 5px;
   background-color: rgb(194,145,0);
   padding:0.5em 2em 0.5em 2em;
-  margin: 0% 0% 0% 68%;
   font-size: 100%;
 }
+header nav ul li a.peep-button{
+  margin: 0% 0% 0% 68%;
+}
+/*========SIGN IN===========*/
+body section.preauth {
+  width:65%;
+  margin: 1% auto 0% auto;
+  background-color: rgb(255,255,255);
+  border-radius: 5px;
+}
+body section.preauth artical{
+  margin: 0% 0% 0% 0%;
+}
+body section.preauth artical form{
+  padding: 5% 0% 5% 16%;
+}
+body section.preauth artical form h1{
+  font-weight: bold;
+  letter-spacing: -2px;
+  font-size: 197%;
+  margin: 0% 0% 0% 0%;
+}
+body section.preauth artical form input{
+  width: 53%;
+  padding: 1%;
+  display: block;
+  border-radius: 2px;
+  border-color: rgba(194,145,0,0.3);
+  margin: 2% 0% 0% 0%;
+  background-color: rgba(255,191,0,0.2);
+}
+body section.preauth artical form a.peep-button{
+  display: inline-block;
+  margin: 6% 0% 0% 0%;
+}
+body section.preauth artical div{
+  width:100%;
+  border-radius: 0px 0px 5px 5px;
+  padding:3% 0% 3% 9%;
+  background-color: rgba(255,191,0,0.2);
+  color: rgba(255,191,0,0.8);
+}
+body section.preauth artical div a{
+  color: rgba(194,145,0,1);
+}
+/*========MAIN APP==========*/
 main {
   background-image: url('../images/DINOBACKGROUND.png');
   background-repeat: repeat-x;
@@ -58,12 +103,17 @@ main section.peep{
 main section.peep-aside,  main section.peep-profile{
   width: 19.99%;
 }
-main section artical {
+main section artical{
   width: 98%;
   margin: auto;
   display: block;
   background-color: rgb(255,255,255);
-  border-radius: 5px;
+}
+main section artical:first-child{
+  border-radius: 5px 5px 0px 0px;
+}
+main section artical:hover{
+  background-color: rgba(255,255,255,0.95)
 }
 main section artical p{
   padding: 9%;
@@ -74,6 +124,27 @@ main section.peep-profile artical span{
   height: 5em;
   display: block;
   border-radius: 5px 5px 0px 0px;
+}
+main section.peep-profile h1{
+  display: block;
+  font-size: 130%;
+  width:100%;
+  text-align: center;
+  margin:5% 0% 4% 0%;
+}
+main section.peep-profile ul li{
+  display: inline-block;
+  margin: 1% 8% 2% 10%;
+}
+main section.peep-profile ul li ul{
+  color: rgb(110,88,20);
+  display: block;
+  margin: 2% 12% 6% 11%;
+}
+main section.peep-profile ul li ul li:first-child{
+  display: block;
+  font-size: 68%;
+  
 }
 main section artical form{
   padding: 4% 0% 5% 4%;
