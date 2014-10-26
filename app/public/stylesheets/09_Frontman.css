@@ -129,7 +129,7 @@ main section.peep-profile artical span{
 main section.peep-profile h1{
   display: block;
   font-size: 130%;
-  width:100%;
+  width:98%;
   text-align: center;
   margin:5% 0% 4% 0%;
 }
@@ -154,6 +154,10 @@ main section artical form{
 main section artical form input[type=text]{
   width: 89%;
   padding: 0.5em;
+}
+.input{
+  background: salmon;
+  height: 5em;
 }
 main section artical blockquote{
   padding:1em;

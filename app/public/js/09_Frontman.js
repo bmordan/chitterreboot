@@ -4,7 +4,7 @@ $(document).ready(function(){
 
   if( id === '' ){
     $('section.preauth').append()
-    $('main').remove()
+    $('main').hide()
     $('header nav ul li a.peep-button').hide()
     $('header nav ul li i.fa').hide()
   }else{
@@ -12,20 +12,26 @@ $(document).ready(function(){
       var peepsTemplate   = Handlebars.compile( $('template.peeps').html()   )
       var profileTemplate = Handlebars.compile( $('template.profile').html() )
       var totalPeeps = 0
+
       for(var i=0;i<data.length;i+=1){
         if (data[i].user.id === parseInt(id)) {
           var profileHtml = profileTemplate({name: data[i].user.name, handle: data[i].user.handle, totalPeeps: totalPeeps +=1 })
         }
       }
+
       $('main section.peep-profile').append(profileHtml)
-      
+      $('input#profile-peep').focus( function() {
+        console.log("focus")
+        $(this).toggleClass('input')
+      })
       
       for(var i=0;i<data.length;i+=1){
         $('main section.peep').append( peepsTemplate(data[i]) )
-      } 
+      }
+
     })
     $('section.preauth').remove()
-    $('main').append()
+    $('main').show()
     $('header nav ul li a.peep-button').show()
     $('header nav ul li i.fa').show()
   }
@@ -43,7 +49,7 @@ $(document).ready(function(){
       window.location.assign('/')
     })
   })
+
   
-
-
+ 
 })
