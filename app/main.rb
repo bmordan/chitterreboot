@@ -44,7 +44,15 @@ DataMapper.auto_upgrade!
 # Send the user the first page
 
 get '/' do
+  session['user_id'] === '' ? @id = '' : @id = session['user_id']
+  puts "inside get session @id value=#{@id}"
   erb :index
+end
+
+post '/' do
+  user = User.authenticate(params[:handle],params[:password])
+  user ? session['user_id'] = user.id : session['user_id'] = ''
+  puts "inside post session['user_id'] value=#{session['user_id']}"
 end
 
 get '/api/chitter' do

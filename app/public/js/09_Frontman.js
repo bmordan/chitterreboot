@@ -1,17 +1,33 @@
 $(document).ready(function(){
   
-  var user = localStorage.user_id
-  if(user === undefined){
-    $('section.preauth').show()
-    $('main').hide()
-    $('header nav ul li a.peep-button').hide()
-  }else{
-    $('section.preauth').hide()
-    $('main').show()
-    $('header nav ul li a.peep-button').show()
-  }
-  
+  var id = $('main samp').html()
 
+  if( id === '' ){
+    $('section.preauth').append()
+    $('main').remove()
+    $('header nav ul li a.peep-button').hide()
+    $('header nav ul li i.fa').hide()
+  }else{
+    $('section.preauth').remove()
+    $('main').append()
+    $('header nav ul li a.peep-button').show()
+    $('header nav ul li i.fa').show()
+  }
+
+  $('body section.preauth artical form a.peep-button').click(function(){
+    var handle = $('#handle').val()
+    var password = $('#password').val()
+    $.post('/',{handle: handle, password: password}, function() {
+      window.location.assign('/')
+    })
+  })
+
+  $('header nav ul li i').click(function() {
+    $.post('/',{handle: undefined, password: undefined}, function() {
+      window.location.assign('/')
+    })
+  })
+  
   $.get('/api/chitter', function(data){
     var peepsTemplate   = Handlebars.compile( $('template.peeps').html()   )
     var profileTemplate = Handlebars.compile( $('template.profile').html() )

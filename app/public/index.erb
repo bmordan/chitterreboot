@@ -11,10 +11,12 @@
 
 <body>
 
+
+
   <header>
     <nav>
       <ul>
-        <li><i class="fa fa-home fa-3x"></i></li>
+        <li><i class="fa fa-sign-out fa-3x"></i></li>
         <li><img src="/images/DINO.svg"></li>
         <li><a href="#" class="peep-button">Peep</a></li>
       </ul>
@@ -25,9 +27,9 @@
     <artical>
       <form>
         <h1>Sign in to Chitter</h1>
-        <input type="text" name="handle">
-        <input type="password" name="password">
-        <a href="#" class="peep-button">Sign in</a>
+        <input type="text" name="handle" id="handle">
+        <input type="password" name="password" id="password">
+        <a href="/" class="peep-button">Sign in</a>
       </form>
       <div>
         <p>New to Chitter? <a href="#">Sign up here >></a></p>
@@ -35,7 +37,8 @@
     </artical>
   </section>
 
-  <main class="auth">
+  <main>
+    <samp><%= @id %></samp>
     <section class="peep-profile"></section>
     <section class="peep"></section>
     <section class="peep-aside">
