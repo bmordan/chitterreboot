@@ -151,13 +151,20 @@ main section artical form{
   padding: 4% 0% 5% 4%;
   background: rgba(255,191,0,0.5);
 }
-main section artical form input[type=text]{
+main section artical form textarea{
+  display: block;
+  resize: none;
   width: 89%;
   padding: 0.5em;
+  border-radius: 3px;
+  border-color: rgba(194,145,0,0.5);
+}
+main section artical form a.peep-button{
+  margin: 0em 0em 0em 52.5%;
+  display: none;
 }
 .input{
-  background: salmon;
-  height: 5em;
+  height: 117px;
 }
 main section artical blockquote{
   padding:1em;

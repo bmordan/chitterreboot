@@ -67,6 +67,10 @@ get '/api/chitter' do
   erb :json
 end
 
+post '/api/chitter' do
+  Peep.create(:peep => params[:peep],:user_id => params[:user_id])
+end
+
 
 
 

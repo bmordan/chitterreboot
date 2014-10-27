@@ -20,11 +20,33 @@ $(document).ready(function(){
       }
 
       $('main section.peep-profile').append(profileHtml)
-      $('input#profile-peep').focus( function() {
-        console.log("focus")
-        $(this).toggleClass('input')
+
+      $('#profile-peep').focus( function() {
+        $(this).attr('placeholder','').attr('rows','5')
+        $('main section artical form').toggleClass('input')
+        $('main section artical form a.peep-button').show()
+        $('main section artical form div').css('height','1.1em')
+        $('main section artical form a.peep-button').css('opacity','0.5')
+        $(this).on('input', function() {
+          $('main section artical form a.peep-button').css('opacity','1')
+        })
+        $('.peep-button').click(function(){
+          var peep = $('#profile-peep').val()
+          $.post('/api/chitter',{peep: peep,user_id: id},function(){
+            window.location.assign('/')
+          })
+        })
       })
-      
+      $('#profile-peep').blur( function() {
+        if($(this).val() === ''){
+          $(this).attr('placeholder','compose a new peep').attr('rows','1')
+          $('main section artical form').toggleClass('input')
+          $('main section artical form div').css('height','0em')
+          $('main section artical form a.peep-button').hide()
+        }
+        
+      })
+
       for(var i=0;i<data.length;i+=1){
         $('main section.peep').append( peepsTemplate(data[i]) )
       }
