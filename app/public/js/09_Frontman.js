@@ -55,7 +55,25 @@ $(document).ready(function(){
     $('section.preauth').remove()
     $('main').show()
     $('header nav ul li a.peep-button').show()
+    $('header nav ul li a.peep-button').click(function(){
+      $('#peep-dialog').dialog({ 
+          minWidth: 640 ,
+          show: { effect: "blind", duration: 800 },
+          open: function(event,ui) {
+            $('.ui-dialog-titlebar-close')
+            .removeClass("ui-dialog-titlebar-close")
+            .html('<span style="float:right;">X</span>');
+          }
+      })
+    })
+
     $('header nav ul li i.fa').show()
+    $('header nav ul li i').click(function() { //signout
+    $.post('/',{handle: undefined, password: undefined}, function() {
+      window.location.assign('/')
+    })
+
+  })
   }
 
   $('body section.preauth artical form a.peep-button').click(function(){
@@ -66,11 +84,7 @@ $(document).ready(function(){
     })
   })
 
-  $('header nav ul li i').click(function() {
-    $.post('/',{handle: undefined, password: undefined}, function() {
-      window.location.assign('/')
-    })
-  })
+
 
   
  

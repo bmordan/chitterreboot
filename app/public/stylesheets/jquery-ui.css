@@ -1,0 +1,35 @@
+div#peep-dialog{
+	background-color: rgba(255,191,0,1);
+	border-color: rgb(194,145,0);
+}
+div#peep-dialog footer{
+	display: block;
+	line-height: 3em;
+}
+div#peep-dialog footer a{
+	margin:0% 0% 0% 83%;
+}
+.ui-dialog textarea{
+  width:99%;
+  margin:auto;
+  resize:none;
+}
+.ui-dialog footer{
+  
+}
+.ui-dialog-content{
+ 	background-color: rgba(255,191,0,1);
+ 	border-color: rgb(194,145,0);
+	padding:1em; 
+}
+.ui-dialog-titlebar{
+	background-color: rgba(255,255,255,1);
+	padding:1em;
+}
+div#peep-dialog span#ui-id-1.ui-dialog-title{
+	text-align: center;
+}
+.ui-button {
+	float:right;
+}
+
