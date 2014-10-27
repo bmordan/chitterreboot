@@ -7,4 +7,4 @@ Your task is split into various sub features:
  - Make the whole front end work with javascript and a templating system ( like handlebarsjs ) to enrich the experience. Make sure that we only serve one html from our server that will initiate the application.
  - Create a JSON API on the server and make the front end talk to that api ( you should create a path like so /api/chitter )
 
-Here are some comparison screen shots:
+[Check out some screen shots here](http://bernardmakes.blogspot.co.uk/2014/10/a-senior-moment.html)
