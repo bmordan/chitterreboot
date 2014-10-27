@@ -7,6 +7,7 @@ $(document).ready(function(){
     $('main').hide()
     $('header nav ul li a.peep-button').hide()
     $('header nav ul li i.fa').hide()
+    $('#peep-dialog').hide()
   }else{
     $.get('/api/chitter', function(data){
       var peepsTemplate   = Handlebars.compile( $('template.peeps').html()   )
@@ -56,6 +57,7 @@ $(document).ready(function(){
     $('main').show()
     $('header nav ul li a.peep-button').show()
     $('header nav ul li a.peep-button').click(function(){
+      $('#peep-dialog').show()
       $('#peep-dialog').dialog({ 
           minWidth: 640 ,
           show: { effect: "blind", duration: 800 },

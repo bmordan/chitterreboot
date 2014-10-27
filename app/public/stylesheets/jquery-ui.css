@@ -1,5 +1,5 @@
 div#peep-dialog{
-	background-color: rgba(255,191,0,1);
+	background-color: rgba(255,191,0,0.3);
 	border-color: rgb(194,145,0);
 }
 div#peep-dialog footer{
@@ -13,23 +13,30 @@ div#peep-dialog footer a{
   width:99%;
   margin:auto;
   resize:none;
+  border: solid 1px rgba(194,145,0,0.5);
+  outline: none;
 }
 .ui-dialog footer{
   
 }
 .ui-dialog-content{
- 	background-color: rgba(255,191,0,1);
  	border-color: rgb(194,145,0);
 	padding:1em; 
 }
 .ui-dialog-titlebar{
-	background-color: rgba(255,255,255,1);
+	background-color: rgba(255,191,0,0.2);
 	padding:1em;
+  border-bottom: solid 1px rgba(194,145,0,0.5);
 }
 div#peep-dialog span#ui-id-1.ui-dialog-title{
 	text-align: center;
 }
 .ui-button {
 	float:right;
+}
+.ui-widget{
+  background-color: rgba(255,255,255,1);
+  border-color: solid 1px rgba(194,145,0,0.5);
+  border-radius: 5px;
 }
 

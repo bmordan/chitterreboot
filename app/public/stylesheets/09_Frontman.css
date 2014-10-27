@@ -154,6 +154,7 @@ main section artical form{
 main section artical form textarea{
   display: block;
   resize: none;
+  outline: none;
   width: 89%;
   padding: 0.5em;
   border-radius: 3px;
