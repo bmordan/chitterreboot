@@ -34,7 +34,7 @@ header nav ul li img{
   height: 80%;
   margin: 0% 0% 0% 40%;
 }
-.peep-button{
+.peep-button, #pop-peep-button{
   color: rgb(255,255,255);
   border-radius: 5px;
   background-color: rgb(194,145,0);

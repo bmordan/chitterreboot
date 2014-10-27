@@ -58,6 +58,14 @@ $(document).ready(function(){
     $('header nav ul li a.peep-button').show()
     $('header nav ul li a.peep-button').click(function(){
       $('#peep-dialog').show()
+      $('#pop-peep-button').click(function(){
+        var peep = $('div#peep-dialog textarea').val();
+        //var id = $('main samp').html();
+        console.log(peep,id)
+        $.post('/api/chitter',{peep: peep,user_id: id},function(){
+          window.location.assign('/')
+        })
+      })
       $('#peep-dialog').dialog({ 
           minWidth: 640 ,
           show: { effect: "blind", duration: 800 },
