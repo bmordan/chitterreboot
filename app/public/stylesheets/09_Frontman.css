@@ -161,6 +161,13 @@ main section artical form textarea{
   border-radius: 3px;
   border-color: rgba(194,145,0,0.5);
 }
+.peep-counter{
+  color: rgba(194,145,0,0.8);
+}
+main section artical form div.peep-counter {
+  margin: 2% 0% 0% 2%;
+  display: none;
+}
 main section artical form a.peep-button{
   margin: 0em 0em 0em 52.5%;
   display: none;
