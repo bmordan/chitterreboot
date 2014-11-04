@@ -1,5 +1,44 @@
 $(document).ready(function(){
+
+  ProfileView = function(el, data) {
+    this.el = el;
+    this.subviews = [];
+    this.profileTemplate = Handlebars.compile( $('template.profile').html() );
+    this._compileTemplateWith(data);
+  };
   
+  ProfileView.prototype.render = function() {
+    $(this.el).append(this.html);
+    this._renderSubviews();
+  };
+
+  ProfileView.prototype._renderSubviews = function() {
+    for(var i = 0; i <= this.subviews.length; i +=1) {
+      console.log('...')
+      $(this.el).append(this.subviews[i].render());
+    }
+  };
+
+  ProfileView.prototype.addView = function(view) {
+    this.subviews.push(view);
+  };
+
+  ProfileView.prototype._compileTemplateWith = function(data) {
+    var totalPeeps = 0
+    for(var i=0;i<data.length;i+=1){
+      if (data[i].user.id === parseInt(id)) {
+        this.html = this.profileTemplate({name: data[i].user.name, handle: data[i].user.handle, totalPeeps: totalPeeps +=1 })
+      }
+    }
+  };
+
+  PoopView = function() {
+  };
+
+  PoopView.prototype.render = function() {
+    return "<h1>YOU'VE BEEN POOPED!</h1>"
+  };
+
   var id = $('main samp').html()
 // If a user is not logged in
   if( id === '' ){
@@ -8,20 +47,15 @@ $(document).ready(function(){
     $('header nav ul li a.peep-button').hide()
     $('header nav ul li i.fa').hide()
     $('#peep-dialog').hide()
-  }else{
+  } else {
+
     // grab the data
     $.get('/api/chitter', function(data){
       var peepsTemplate   = Handlebars.compile( $('template.peeps').html()   )
-      var profileTemplate = Handlebars.compile( $('template.profile').html() )
-      var totalPeeps = 0
-      // render the user profile template
-      for(var i=0;i<data.length;i+=1){
-        if (data[i].user.id === parseInt(id)) {
-          var profileHtml = profileTemplate({name: data[i].user.name, handle: data[i].user.handle, totalPeeps: totalPeeps +=1 })
-        }
-      }
-      //populate the user section
-      $('main section.peep-profile').append(profileHtml)
+      view = new ProfileView('main section.peep-profile', data);
+      view.addView(new PoopView);
+      view.render();
+
       // manage the click and reveal peep input box
       $('#profile-peep').focus( function() {
         $(this).attr('placeholder','').attr('rows','5')
@@ -30,6 +64,7 @@ $(document).ready(function(){
         $('main section artical form a.peep-button').show()
         $('main section artical form div').css('height','1.1em')
         $('main section artical form a.peep-button').css('opacity','0.5')
+        $('#profile-peep').val('')
         $(this).on('input', function() {
           $('main section artical form a.peep-button').css('opacity','1')
           var length = (144 - parseInt($(this).val().length))
@@ -48,7 +83,8 @@ $(document).ready(function(){
         $('main section artical form div').css('height','0em')
         $('main section artical form a.peep-button').hide()
         $('main section artical form div.peep-counter').hide()
-        $('main section artical form textarea').val('')  
+        $('main section artical form textarea').val('') 
+        $('div.peep-counter').text('144')
       })
 
       for(var i=0;i<data.length;i+=1){
